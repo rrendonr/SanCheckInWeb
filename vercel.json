@@ -1,0 +1,9 @@
+{
+  "outputDirectory": "visitor-checkin",
+  "builds": [
+    { "src": "visitor-checkin/**", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/visitor-checkin/$1" }
+  ]
+}
