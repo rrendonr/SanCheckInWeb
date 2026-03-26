@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visitor Check-In</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="brand">
+      <div class="brand-icon"></div>
+      <div>
+        <div class="brand-name">My Office</div>
+        <div class="brand-sub">Visitor check-in &amp; check-out</div>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#" class="nav-link active">Check-in</a>
+    </div>
+  </nav>
+
+  <div id="flash" class="flash hidden"></div>
+
+  <main class="layout">
+
+    <!-- Left: Form -->
+    <section class="card form-card">
+      <h2>Welcome</h2>
+      <p class="subtitle">Please complete check-in. Your host will be notified by your team's normal process.</p>
+
+      <form id="checkinForm" novalidate>
+        <div class="row">
+          <div class="field">
+            <label>Full name <span class="req">*</span></label>
+            <input type="text" id="name" placeholder="e.g. Jordan Lee" />
+          </div>
+          <div class="field">
+            <label>Company</label>
+            <input type="text" id="company" placeholder="e.g. Acme Bio" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label>Email</label>
+            <input type="email" id="email" placeholder="name@company.com" />
+          </div>
+          <div class="field">
+            <label>Phone</label>
+            <input type="tel" id="phone" placeholder="+1 (555) 555-5555" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label>Who are you visiting? <span class="req">*</span></label>
+            <input type="text" id="host" placeholder="Host name" />
+          </div>
+          <div class="field">
+            <label>Badge name</label>
+            <input type="text" id="badge" placeholder="If different from full name" />
+          </div>
+        </div>
+        <div class="field full">
+          <label>Purpose of visit</label>
+          <textarea id="purpose" placeholder="Meeting, interview, delivery, etc."></textarea>
+        </div>
+        <div class="form-footer">
+          <button type="submit" class="btn-primary">Check in</button>
+          <span class="required-note">Fields marked <span class="req">*</span> are required.</span>
+        </div>
+      </form>
+    </section>
+
+    <!-- Right: On-site panel -->
+    <aside class="card panel">
+      <div class="panel-header">
+        <span class="panel-title">Currently on-site</span>
+        <span class="badge" id="count">0</span>
+      </div>
+      <div id="visitorList" class="visitor-list">
+        <p class="empty-msg">No active visitors right now.</p>
+      </div>
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>Visitor management</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
