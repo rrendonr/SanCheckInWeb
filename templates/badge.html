@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ app_name }} · Badge</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+  </head>
+  <body class="badge-body">
+    <div class="badge-wrap">
+      <div class="badge">
+        <div class="badge-top">
+          <div class="badge-mark" aria-hidden="true"></div>
+          <div>
+            <div class="badge-org">{{ app_name }}</div>
+            <div class="badge-sub">VISITOR</div>
+          </div>
+        </div>
+        <div class="badge-name">
+          {{ visit["badge_name"] or visit["full_name"] }}
+        </div>
+        <div class="badge-meta">
+          <div><span class="badge-label">Host</span> {{ visit["host_name"] }}</div>
+          {% if visit["company"] %}<div><span class="badge-label">Company</span> {{ visit["company"] }}</div>{% endif %}
+        </div>
+        <div class="badge-foot">
+          <div class="badge-small">Checked in</div>
+          <div class="badge-mono">{{ visit["checked_in_at"] }}</div>
+        </div>
+      </div>
+
+      <div class="badge-actions no-print">
+        <a class="btn btn-ghost" href="{{ url_for('home') }}">Back</a>
+        <button class="btn btn-primary" onclick="window.print()">Print badge</button>
+      </div>
+    </div>
+  </body>
+</html>
+

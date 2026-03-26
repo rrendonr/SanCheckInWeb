@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ app_name }} · Visit history</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+  </head>
+  <body>
+    <div class="bg"></div>
+    <div class="container">
+      <header class="topbar">
+        <div class="brand">
+          <div class="mark" aria-hidden="true"></div>
+          <div>
+            <div class="brand-name">{{ app_name }}</div>
+            <div class="brand-sub">Visit history</div>
+          </div>
+        </div>
+        <nav class="nav">
+          <a class="nav-link" href="{{ url_for('home') }}">Check-in</a>
+          <a class="nav-link active" href="{{ url_for('history') }}">History</a>
+        </nav>
+      </header>
+
+      <main class="card">
+        <div class="card-head">
+          <h1 class="h2">Visit history</h1>
+          <form class="search" method="get" action="{{ url_for('history') }}">
+            <input name="q" value="{{ q }}" placeholder="Search name, host, company, email">
+            <button class="btn btn-primary" type="submit">Search</button>
+          </form>
+        </div>
+
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Visitor</th>
+                <th>Company</th>
+                <th>Host</th>
+                <th>Checked in</th>
+                <th>Checked out</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for r in rows %}
+                <tr>
+                  <td class="td-strong">{{ r["full_name"] }}</td>
+                  <td>{{ r["company"] or "—" }}</td>
+                  <td>{{ r["host_name"] }}</td>
+                  <td class="mono">{{ r["checked_in_at"] }}</td>
+                  <td class="mono">{{ r["checked_out_at"] or "—" }}</td>
+                  <td><a class="link" href="{{ url_for('badge', visit_id=r['id']) }}">Badge</a></td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        {% if not rows %}
+          <p class="muted">No visits found.</p>
+        {% endif %}
+      </main>
+    </div>
+  </body>
+</html>
+

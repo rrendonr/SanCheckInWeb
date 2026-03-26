@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card eBay search – last 3 sold</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Card eBay search</h1>
+      <p class="subtitle">
+        Type a card name and we’ll hit eBay live and show the last 3 sold listings.
+      </p>
+      <p class="subtitle small">
+        Example: <code>Articuno 161/159 Sv09: Journey Together psa 10</code>
+      </p>
+    </header>
+
+    <section class="ebay-search">
+      <div class="ebay-search-row">
+        <input
+          id="ebay-query"
+          class="ebay-input"
+          type="text"
+          placeholder="Search card (e.g. Charizard 4/102 PSA 10)"
+        >
+        <button id="ebay-button" class="ebay-button" type="button">Search</button>
+      </div>
+      <div id="ebay-status" class="ebay-status"></div>
+      <ul id="ebay-results" class="ebay-results"></ul>
+
+      <p class="note">
+        Backend must be running locally with
+        <code>pip install -r requirements.txt</code> then
+        <code>python ebay_api.py</code> in this folder.
+      </p>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
