@@ -7,12 +7,12 @@
 /* ── Base ── */
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
-  background-color: #080c14;
+  background-color: #e8edf5;
   background-image:
-    radial-gradient(circle at 50% 0%, rgba(255,255,255,0.03) 0%, transparent 60%),
-    radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    radial-gradient(circle at 50% 0%, rgba(255,255,255,0.8) 0%, transparent 60%),
+    radial-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px);
   background-size: 100% 100%, 32px 32px;
-  color: #dce8f5;
+  color: #1a2035;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -28,10 +28,11 @@ body {
   justify-content: space-between;
   padding: 0 2rem;
   height: 64px;
-  background: rgba(8, 12, 20, 0.7);
-  backdrop-filter: blur(24px) saturate(160%);
-  -webkit-backdrop-filter: blur(24px) saturate(160%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.9);
 }
 
 .brand {
@@ -44,8 +45,8 @@ body {
   width: 36px;
   height: 36px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   position: relative;
   backdrop-filter: blur(8px);
 }
@@ -54,20 +55,20 @@ body {
   content: '';
   position: absolute;
   inset: 1px 1px 50% 1px;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.6);
   border-radius: 8px 8px 0 0;
 }
 
 .brand-name {
   font-weight: 700;
   font-size: 1rem;
-  color: #f0f6ff;
+  color: #0f172a;
   letter-spacing: 0.01em;
 }
 
 .brand-sub {
   font-size: 0.72rem;
-  color: rgba(200, 220, 255, 0.4);
+  color: rgba(15, 23, 42, 0.4);
   letter-spacing: 0.02em;
 }
 
@@ -78,7 +79,7 @@ body {
 
 .nav-link {
   text-decoration: none;
-  color: rgba(200, 220, 255, 0.5);
+  color: rgba(15, 23, 42, 0.5);
   font-size: 0.9rem;
   font-weight: 500;
   padding: 0.4rem 1rem;
@@ -90,9 +91,9 @@ body {
 
 .nav-link.active,
 .nav-link:hover {
-  color: #e8f2ff;
-  background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(255, 255, 255, 0.12);
+  color: #0f172a;
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.1);
 }
 
 /* ── Flash ── */
@@ -100,14 +101,12 @@ body {
   margin: 1rem 2rem 0;
   padding: 0.75rem 1.25rem;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.06);
-  color: rgba(200, 240, 220, 0.9);
+  background: rgba(255, 255, 255, 0.6);
+  color: #166534;
   font-size: 0.875rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  position: relative;
-  z-index: 1;
 }
 
 .flash.hidden { display: none; }
@@ -127,17 +126,19 @@ main.layout {
 
 /* ── Cards ── */
 .card {
-  background: rgba(255, 255, 255, 0.055);
-  backdrop-filter: blur(40px) saturate(180%);
-  -webkit-backdrop-filter: blur(40px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-top-color: rgba(255, 255, 255, 0.22);
-  border-left-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(40px) saturate(200%);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-top-color: rgba(255, 255, 255, 1);
+  border-left-color: rgba(255, 255, 255, 0.95);
+  border-bottom-color: rgba(0, 0, 0, 0.06);
+  border-right-color: rgba(0, 0, 0, 0.04);
   border-radius: 20px;
   padding: 2rem;
   box-shadow:
-    0 12px 40px rgba(0, 0, 0, 0.5),
-    0 1px 0 rgba(255, 255, 255, 0.07) inset;
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    0 1px 0 rgba(255, 255, 255, 1) inset;
   position: relative;
   overflow: hidden;
 }
@@ -150,20 +151,20 @@ main.layout {
   left: 8%;
   right: 8%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,1), transparent);
 }
 
 .form-card h2 {
   font-size: 1.55rem;
   font-weight: 700;
-  color: #eef4ff;
+  color: #0f172a;
   margin-bottom: 0.4rem;
   letter-spacing: -0.02em;
 }
 
 .subtitle {
   font-size: 0.875rem;
-  color: rgba(200, 220, 255, 0.45);
+  color: rgba(15, 23, 42, 0.45);
   margin-bottom: 1.75rem;
   line-height: 1.6;
 }
@@ -190,39 +191,42 @@ main.layout {
 
 label {
   font-size: 0.75rem;
-  color: rgba(200, 220, 255, 0.5);
+  color: rgba(15, 23, 42, 0.5);
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
-.req { color: rgba(240, 160, 180, 0.9); }
+.req { color: #e11d48; }
 
 input, textarea {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   padding: 0.65rem 0.9rem;
-  color: #e8f0ff;
+  color: #0f172a;
   font-size: 0.9rem;
   outline: none;
   transition: all 0.2s;
   font-family: inherit;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.9) inset;
 }
 
 input::placeholder, textarea::placeholder {
-  color: rgba(200, 220, 255, 0.2);
+  color: rgba(15, 23, 42, 0.25);
 }
 
 input:focus, textarea:focus {
-  border-color: rgba(255, 255, 255, 0.25);
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+  border-color: rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255,255,255,0.9) inset;
 }
 
 input.error, textarea.error {
-  border-color: rgba(240, 120, 120, 0.5);
-  box-shadow: 0 0 0 3px rgba(240, 120, 120, 0.08);
+  border-color: rgba(225, 29, 72, 0.4);
+  box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.08);
 }
 
 textarea {
@@ -239,10 +243,10 @@ textarea {
 
 /* ── Button ── */
 .btn-primary {
-  background: rgba(255, 255, 255, 0.12);
-  color: #eef4ff;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  border-top-color: rgba(255, 255, 255, 0.35);
+  background: rgba(15, 23, 42, 0.85);
+  color: #f8fafc;
+  border: 1px solid rgba(15, 23, 42, 0.9);
+  border-top-color: rgba(60, 80, 120, 0.7);
   border-radius: 12px;
   padding: 0.7rem 1.75rem;
   font-size: 0.9rem;
@@ -252,9 +256,7 @@ textarea {
   position: relative;
   overflow: hidden;
   transition: all 0.2s;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255,255,255,0.15) inset;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255,255,255,0.1) inset;
 }
 
 .btn-primary::before {
@@ -262,15 +264,14 @@ textarea {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 50%;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.07);
   border-radius: 12px 12px 0 0;
 }
 
 .btn-primary:hover {
-  background: rgba(255, 255, 255, 0.18);
-  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(15, 23, 42, 1);
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 1px 0 rgba(255,255,255,0.2) inset;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 .btn-primary:active {
@@ -279,7 +280,7 @@ textarea {
 
 .required-note {
   font-size: 0.78rem;
-  color: rgba(200, 220, 255, 0.3);
+  color: rgba(15, 23, 42, 0.3);
 }
 
 /* ── Panel ── */
@@ -297,15 +298,15 @@ textarea {
 
 .panel-title {
   font-weight: 700;
-  color: #eef4ff;
+  color: #0f172a;
   font-size: 0.95rem;
   letter-spacing: 0.01em;
 }
 
 .badge {
-  background: rgba(255, 255, 255, 0.08);
-  color: rgba(200, 220, 255, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.07);
+  color: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 999px;
   padding: 0.15rem 0.7rem;
   font-size: 0.8rem;
@@ -321,7 +322,7 @@ textarea {
 }
 
 .empty-msg {
-  color: rgba(200, 220, 255, 0.3);
+  color: rgba(15, 23, 42, 0.35);
   font-size: 0.875rem;
   text-align: center;
   padding: 1.5rem 0;
@@ -329,9 +330,10 @@ textarea {
 
 /* ── Visitor card ── */
 .visitor-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  border-top-color: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-bottom-color: rgba(0, 0, 0, 0.05);
+  border-right-color: rgba(0, 0, 0, 0.04);
   border-radius: 14px;
   padding: 0.9rem 1rem;
   display: flex;
@@ -341,29 +343,30 @@ textarea {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
 }
 
 .visitor-card:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 .visitor-info .visitor-name {
   font-weight: 700;
   font-size: 0.95rem;
-  color: #eef4ff;
+  color: #0f172a;
 }
 
 .visitor-info .visitor-meta {
   font-size: 0.78rem;
-  color: rgba(200, 220, 255, 0.45);
+  color: rgba(15, 23, 42, 0.45);
   margin-top: 0.2rem;
 }
 
 .btn-checkout {
-  background: rgba(255, 255, 255, 0.07);
-  color: rgba(200, 220, 255, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.6);
+  color: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   padding: 0.35rem 0.85rem;
   font-size: 0.8rem;
@@ -376,9 +379,10 @@ textarea {
 }
 
 .btn-checkout:hover {
-  background: rgba(255, 255, 255, 0.13);
-  color: #eef4ff;
-  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(15, 23, 42, 0.85);
+  color: #f8fafc;
+  border-color: transparent;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 /* ── Footer ── */
@@ -386,6 +390,6 @@ footer {
   text-align: center;
   padding: 1rem;
   font-size: 0.75rem;
-  color: rgba(200, 220, 255, 0.2);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  color: rgba(15, 23, 42, 0.25);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
